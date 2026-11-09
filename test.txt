@@ -1,0 +1,16 @@
+1. Legitimate Websites (Expected: LEGITIMATE)
+Test URL	Probability	Verdict	Key Feature Rationale
+https://www.google.com	0.0004	LEGITIMATE	Trusted legitimate brand domain, clean lexical structure.
+https://github.com/torvalds/linux	0.1178	LEGITIMATE	Developer repository path, trusted authority domain.
+https://en.wikipedia.org	0.0078	LEGITIMATE	Standard .org educational/encyclopedia TLD, clean hostname.
+https://en.wikipedia.org/wiki/Deep_learning	0.0001	LEGITIMATE	Encyclopedia topic path, zero suspicious tokens.
+https://stackoverflow.com	0.2512	LEGITIMATE	Legitimate tech platform domain, standard syntax.
+
+2. Phishing & Malicious Patterns (Expected: PHISHING)
+Test URL	Probability	Verdict	Threat Vector Triggered
+http://192.168.1.1/admin-login-update	1.0000	PHISHING	Raw IP address host + admin/login keywords in path.
+http://paypal.com.account-verification-security.xyz/login.php	1.0000	PHISHING	Subdomain brand impersonation + suspicious .xyz TLD.
+http://appleid.apple.com-login-verify.top/auth/signin	1.0000	PHISHING	Hyphenated brand prefix-suffix trap + .top TLD + signin tokens.
+http://bankofamerica.com.signon-session.info/update-account.exe	1.0000	PHISHING	Brand spoofing + dangerous executable (.exe) extension in path.
+http://netflix-billing-update-center.tk/secure/login	1.0000	PHISHING	Free/abused .tk TLD + high-risk billing/login keyword traps.
+http://accounts.google.com.user-redirect.xyz/signin?service=mail	1.0000	PHISHING	Google login redirect masquerade on third-party .xyz host.
